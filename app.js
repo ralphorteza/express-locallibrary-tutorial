@@ -14,8 +14,8 @@ var app = express();
 // mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-// const mongoDB = "mongodb+srv://libraryadmin:qiT9mPy6PnfRGQzf@cluster0.mwd6uuv.mongodb.net/local_library?retryWrites=true&w=majority";
 const mongoDB = process.env.MONGO_DB_KEY;
+
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
